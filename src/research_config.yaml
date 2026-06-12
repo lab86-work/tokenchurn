@@ -1,0 +1,137 @@
+# Research configuration for tokenchurn project analysis
+# Each repo is cloned to tmp/<name> and analyzed.
+# Reports are written to docs/research/<name>/
+
+prompt: |
+  We are building tokenchurn — a multi-model, multi-provider coding harness
+  focused on token economics (max output quality per dollar).
+
+  Analyze this codebase and extract anything useful for tokenchurn:
+  1. Architecture patterns — how does it structure multi-model orchestration?
+  2. Provider abstraction — how does it handle multiple LLM backends?
+  3. Cost/routing logic — any token budgeting, cost tracking, or model selection?
+  4. Context management — how does it manage workspace/project context?
+  5. Interesting features — anything unique or clever worth stealing?
+  6. Code quality — testing patterns, packaging, CLI design.
+
+  Be specific: mention file paths, function names, design decisions.
+  This is research — we want to borrow the best ideas.
+
+repos:
+  # ─── Multi-Model Debate & Blueprints ───
+  - url: https://github.com/karpathy/llm-council
+    name: llm-council
+    create_zip: true
+    analysis_commands:
+      - "tree {repo_dir} -L 2 --dirsfirst > {report_dir}/tree.txt"
+
+  - url: https://github.com/karpathy/autoresearch
+    name: autoresearch
+    create_zip: true
+    analysis_commands:
+      - "tree {repo_dir} -L 2 --dirsfirst > {report_dir}/tree.txt"
+
+  - url: https://github.com/lm-sys/FastChat
+    name: fastchat
+    create_zip: false
+    analysis_commands:
+      - "tree {repo_dir} -L 2 --dirsfirst > {report_dir}/tree.txt"
+
+  - url: https://github.com/promptfoo/promptfoo
+    name: promptfoo
+    create_zip: false
+    analysis_commands:
+      - "tree {repo_dir} -L 2 --dirsfirst > {report_dir}/tree.txt"
+
+  # ─── Coding Agents & IDE Integrations ───
+  - url: https://github.com/paul-gauthier/aider
+    name: aider
+    create_zip: false
+    analysis_commands:
+      - "tree {repo_dir} -L 2 --dirsfirst > {report_dir}/tree.txt"
+
+  - url: https://github.com/cline/cline
+    name: cline
+    create_zip: false
+    analysis_commands:
+      - "tree {repo_dir} -L 2 --dirsfirst > {report_dir}/tree.txt"
+
+  - url: https://github.com/All-Hands-AI/OpenHands
+    name: openhands
+    create_zip: false
+    analysis_commands:
+      - "tree {repo_dir} -L 2 --dirsfirst > {report_dir}/tree.txt"
+
+  - url: https://github.com/RooVetGit/Roo-Code
+    name: roo-code
+    create_zip: false
+    analysis_commands:
+      - "tree {repo_dir} -L 2 --dirsfirst > {report_dir}/tree.txt"
+
+  - url: https://github.com/princeton-nlp/SWE-agent
+    name: swe-agent
+    create_zip: false
+    analysis_commands:
+      - "tree {repo_dir} -L 2 --dirsfirst > {report_dir}/tree.txt"
+
+  - url: https://github.com/anomalyco/opencode
+    name: opencode
+    create_zip: false
+    analysis_commands:
+      - "tree {repo_dir} -L 2 --dirsfirst > {report_dir}/tree.txt"
+
+  # ─── Multi-Agent Orchestration ───
+  - url: https://github.com/langchain-ai/langgraph
+    name: langgraph
+    create_zip: false
+    analysis_commands:
+      - "tree {repo_dir} -L 2 --dirsfirst > {report_dir}/tree.txt"
+
+  - url: https://github.com/microsoft/autogen
+    name: autogen
+    create_zip: false
+    analysis_commands:
+      - "tree {repo_dir} -L 2 --dirsfirst > {report_dir}/tree.txt"
+
+  - url: https://github.com/crewAIInc/crewAI
+    name: crewai
+    create_zip: false
+    analysis_commands:
+      - "tree {repo_dir} -L 2 --dirsfirst > {report_dir}/tree.txt"
+
+  - url: https://github.com/openai/openai-agents-python
+    name: openai-agents-sdk
+    create_zip: false
+    analysis_commands:
+      - "tree {repo_dir} -L 2 --dirsfirst > {report_dir}/tree.txt"
+
+  - url: https://github.com/geekan/MetaGPT
+    name: metagpt
+    create_zip: false
+    analysis_commands:
+      - "tree {repo_dir} -L 2 --dirsfirst > {report_dir}/tree.txt"
+
+  - url: https://github.com/mastra-ai/mastra
+    name: mastra
+    create_zip: false
+    analysis_commands:
+      - "tree {repo_dir} -L 2 --dirsfirst > {report_dir}/tree.txt"
+
+  - url: https://github.com/EvoAgentX/EvoAgentX
+    name: evoagentx
+    create_zip: false
+    analysis_commands:
+      - "tree {repo_dir} -L 2 --dirsfirst > {report_dir}/tree.txt"
+
+  # ─── Model Routing & API Gateways ───
+  - url: https://github.com/BerriAI/litellm
+    name: litellm
+    create_zip: false
+    analysis_commands:
+      - "tree {repo_dir} -L 2 --dirsfirst > {report_dir}/tree.txt"
+
+  - url: https://github.com/ollama/ollama
+    name: ollama
+    create_zip: false
+    analysis_commands:
+      - "tree {repo_dir} -L 2 --dirsfirst > {report_dir}/tree.txt"
